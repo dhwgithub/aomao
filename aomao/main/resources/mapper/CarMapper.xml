@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.henu.dao.CarMapper">
+  <resultMap id="BaseResultMap" type="com.henu.pojo.Car">
+    <!--@mbg.generated-->
+    <id column="cargood" jdbcType="INTEGER" property="cargood" />
+    <result column="carnum" jdbcType="INTEGER" property="carnum" />
+    <result column="caruser" jdbcType="VARCHAR" property="caruser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    cargood, carnum, caruser
+  </sql>
+
+  <resultMap id="CarMap" type="com.henu.pojo.Car">
+    <!--@mbg.generated-->
+    <id column="caruser"  property="caruser" />
+    <result column="cargood" jdbcType="INTEGER" property="cargood" />
+    <result column="carnum" jdbcType="INTEGER" property="carnum" />
+
+    <association property="user" column="user" javaType="com.henu.pojo.User">
+      <id property="uid" column="uid"/>
+      <result property="uemail" column="uemail"/>
+      <result property="ugender" column="ugender"/>
+      <result property="uimg" column="uimg"/>
+      <result property="uname" column="uname"/>
+      <result property="upwd" column="upwd"/>
+      <result property="urank" column="urank"/>
+      <result property="uscore" column="uscore"/>
+      <result property="ustate" column="ustate"/>
+      <result property="utel" column="utel"/>
+    </association>
+    <collection property="carList" column="carList" ofType="com.henu.pojo.Goods">
+      <id property="gid" column="gid"/>
+      <result property="gname" column="gname"/>
+      <result property="gclass" column="gclass"/>
+      <result property="gprice" column="gprice"/>
+      <result property="gtext" column="gtext"/>
+      <result property="gsum" column="gsum"/>
+      <result property="gnum" column="gnum"/>
+      <result property="gprice2" column="gprice2"/>
+      <result property="gwei" column="gwei"/>
+      <result property="gduty" column="gduty"/>
+      <result property="gpic" column="gpic"/>
+    </collection>
+  </resultMap>
+
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tb_car
+    where cargood = #{cargood,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from tb_car
+    where cargood = #{cargood,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="cargood" keyProperty="cargood" parameterType="com.henu.pojo.Car" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tb_car (carnum, caruser, cargood)
+    values (#{carnum,jdbcType=INTEGER}, #{caruser,jdbcType=VARCHAR}, #{cargood,jdbcType=INTEGER} )
+  </insert>
+  <insert id="insertSelective" keyColumn="cargood" keyProperty="cargood" parameterType="com.henu.pojo.Car" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tb_car
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="carnum != null">
+        carnum,
+      </if>
+      <if test="caruser != null">
+        caruser,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="carnum != null">
+        #{carnum,jdbcType=INTEGER},
+      </if>
+      <if test="caruser != null">
+        #{caruser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.henu.pojo.Car">
+    <!--@mbg.generated-->
+    update tb_car
+    <set>
+      <if test="carnum != null">
+        carnum = #{carnum,jdbcType=INTEGER},
+      </if>
+      <if test="caruser != null">
+        caruser = #{caruser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where cargood = #{cargood,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.henu.pojo.Car">
+    <!--@mbg.generated-->
+    update tb_car
+    set carnum = #{carnum,jdbcType=INTEGER},
+      caruser = #{caruser,jdbcType=VARCHAR}
+    where cargood = #{cargood,jdbcType=INTEGER}
+  </update>
+  <select id="findCarByCarGoodAndCaruser" resultMap="BaseResultMap">
+    select * from tb_car where cargood = #{cargood,jdbcType=INTEGER}  and caruser = #{caruser,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteCarByGidAndCid">
+    delete from tb_car where cargood = #{cargood,jdbcType=INTEGER}  and caruser = #{caruser,jdbcType=VARCHAR}
+  </delete>
+  <update id="updateByCarGoodAndCaruser">
+    update tb_car
+    set carnum = #{carnum,jdbcType=INTEGER}
+    where cargood = #{cargood,jdbcType=INTEGER} and caruser = #{caruser,jdbcType=VARCHAR}
+  </update>
+  <select id="selectByCarUser" resultMap="CarMap">
+    select * from tb_goods, tb_car
+    where tb_goods.gid = tb_car.cargood and tb_car.caruser = #{carUser,jdbcType=VARCHAR}
+  </select>
+</mapper>

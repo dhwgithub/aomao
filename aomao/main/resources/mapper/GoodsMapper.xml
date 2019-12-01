@@ -1,0 +1,194 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.henu.dao.GoodsMapper">
+  <resultMap id="BaseResultMap" type="com.henu.pojo.Goods">
+    <!--@mbg.generated-->
+    <id column="gid" jdbcType="INTEGER" property="gid" />
+    <result column="gname" jdbcType="VARCHAR" property="gname" />
+    <result column="gclass" jdbcType="VARCHAR" property="gclass" />
+    <result column="gprice" jdbcType="DOUBLE" property="gprice" />
+    <result column="gtext" jdbcType="VARCHAR" property="gtext" />
+    <result column="gsum" jdbcType="INTEGER" property="gsum" />
+    <result column="gnum" jdbcType="INTEGER" property="gnum" />
+    <result column="gprice2" jdbcType="DOUBLE" property="gprice2" />
+    <result column="gwei" jdbcType="DOUBLE" property="gwei" />
+    <result column="gduty" jdbcType="DOUBLE" property="gduty" />
+    <result column="gpic" jdbcType="VARCHAR" property="gpic" />
+
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    gid, gname, gclass, gprice, gtext, gsum, gnum, gprice2, gwei, gduty, gpic
+  </sql>
+
+
+
+<!--  <select id="getCurrPageGoods" parameterType="com.henu.pojo.PageElement" resultMap="BaseResultMap">-->
+<!--    select * from tb_goods-->
+<!--    limit #{currPage},#{perPageSize}-->
+<!--  </select>-->
+<!--  <select id="getAllGoodsNum" resultType="int">-->
+<!--    select count(*) from tb_goods;-->
+<!--  </select>-->
+
+
+
+
+
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tb_goods
+    where gid = #{gid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from tb_goods
+    where gid = #{gid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="gid" keyProperty="gid" parameterType="com.henu.pojo.Goods" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tb_goods (gname, gclass, gprice, 
+      gtext, gsum, gnum, 
+      gprice2, gwei, gduty, 
+      gpic)
+    values (#{gname,jdbcType=VARCHAR}, #{gclass,jdbcType=VARCHAR}, #{gprice,jdbcType=DOUBLE}, 
+      #{gtext,jdbcType=VARCHAR}, #{gsum,jdbcType=INTEGER}, #{gnum,jdbcType=INTEGER}, 
+      #{gprice2,jdbcType=DOUBLE}, #{gwei,jdbcType=DOUBLE}, #{gduty,jdbcType=DOUBLE}, 
+      #{gpic,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="gid" keyProperty="gid" parameterType="com.henu.pojo.Goods" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tb_goods
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="gname != null">
+        gname,
+      </if>
+      <if test="gclass != null">
+        gclass,
+      </if>
+      <if test="gprice != null">
+        gprice,
+      </if>
+      <if test="gtext != null">
+        gtext,
+      </if>
+      <if test="gsum != null">
+        gsum,
+      </if>
+      <if test="gnum != null">
+        gnum,
+      </if>
+      <if test="gprice2 != null">
+        gprice2,
+      </if>
+      <if test="gwei != null">
+        gwei,
+      </if>
+      <if test="gduty != null">
+        gduty,
+      </if>
+      <if test="gpic != null">
+        gpic,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="gname != null">
+        #{gname,jdbcType=VARCHAR},
+      </if>
+      <if test="gclass != null">
+        #{gclass,jdbcType=VARCHAR},
+      </if>
+      <if test="gprice != null">
+        #{gprice,jdbcType=DOUBLE},
+      </if>
+      <if test="gtext != null">
+        #{gtext,jdbcType=VARCHAR},
+      </if>
+      <if test="gsum != null">
+        #{gsum,jdbcType=INTEGER},
+      </if>
+      <if test="gnum != null">
+        #{gnum,jdbcType=INTEGER},
+      </if>
+      <if test="gprice2 != null">
+        #{gprice2,jdbcType=DOUBLE},
+      </if>
+      <if test="gwei != null">
+        #{gwei,jdbcType=DOUBLE},
+      </if>
+      <if test="gduty != null">
+        #{gduty,jdbcType=DOUBLE},
+      </if>
+      <if test="gpic != null">
+        #{gpic,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.henu.pojo.Goods">
+    <!--@mbg.generated-->
+    update tb_goods
+    <set>
+      <if test="gname != null">
+        gname = #{gname,jdbcType=VARCHAR},
+      </if>
+      <if test="gclass != null">
+        gclass = #{gclass,jdbcType=VARCHAR},
+      </if>
+      <if test="gprice != null">
+        gprice = #{gprice,jdbcType=DOUBLE},
+      </if>
+      <if test="gtext != null">
+        gtext = #{gtext,jdbcType=VARCHAR},
+      </if>
+      <if test="gsum != null">
+        gsum = #{gsum,jdbcType=INTEGER},
+      </if>
+      <if test="gnum != null">
+        gnum = #{gnum,jdbcType=INTEGER},
+      </if>
+      <if test="gprice2 != null">
+        gprice2 = #{gprice2,jdbcType=DOUBLE},
+      </if>
+      <if test="gwei != null">
+        gwei = #{gwei,jdbcType=DOUBLE},
+      </if>
+      <if test="gduty != null">
+        gduty = #{gduty,jdbcType=DOUBLE},
+      </if>
+      <if test="gpic != null">
+        gpic = #{gpic,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where gid = #{gid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.henu.pojo.Goods">
+    <!--@mbg.generated-->
+    update tb_goods
+    set gname = #{gname,jdbcType=VARCHAR},
+      gclass = #{gclass,jdbcType=VARCHAR},
+      gprice = #{gprice,jdbcType=DOUBLE},
+      gtext = #{gtext,jdbcType=VARCHAR},
+      gsum = #{gsum,jdbcType=INTEGER},
+      gnum = #{gnum,jdbcType=INTEGER},
+      gprice2 = #{gprice2,jdbcType=DOUBLE},
+      gwei = #{gwei,jdbcType=DOUBLE},
+      gduty = #{gduty,jdbcType=DOUBLE},
+      gpic = #{gpic,jdbcType=VARCHAR}
+    where gid = #{gid,jdbcType=INTEGER}
+  </update>
+
+
+    <select id="findGoodsLikeKey" resultMap="BaseResultMap">
+        select * from tb_goods where gname like "%"#{key}"%"
+    </select>
+
+  <select id="selectAllGoods" resultMap="BaseResultMap">
+    select
+    <include refid="Base_Column_List" />
+    from tb_goods
+  </select>
+</mapper>

@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.henu.dao.TalkMapper">
+  <resultMap id="BaseResultMap" type="com.henu.pojo.Talk">
+    <!--@mbg.generated-->
+    <id column="tid" jdbcType="INTEGER" property="tid" />
+    <result column="tcomm" jdbcType="VARCHAR" property="tcomm" />
+    <result column="ttime" jdbcType="DATE" property="ttime" />
+    <result column="tgood" jdbcType="INTEGER" property="tgood" />
+    <result column="tuser" jdbcType="VARCHAR" property="tuser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    tid, tcomm, ttime, tgood, tuser
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tb_talk
+    where tid = #{tid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from tb_talk
+    where tid = #{tid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="tid" keyProperty="tid" parameterType="com.henu.pojo.Talk" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tb_talk (tcomm, ttime, tgood, 
+      tuser)
+    values (#{tcomm,jdbcType=VARCHAR}, #{ttime,jdbcType=DATE}, #{tgood,jdbcType=INTEGER}, 
+      #{tuser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="tid" keyProperty="tid" parameterType="com.henu.pojo.Talk" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tb_talk
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="tcomm != null">
+        tcomm,
+      </if>
+      <if test="ttime != null">
+        ttime,
+      </if>
+      <if test="tgood != null">
+        tgood,
+      </if>
+      <if test="tuser != null">
+        tuser,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="tcomm != null">
+        #{tcomm,jdbcType=VARCHAR},
+      </if>
+      <if test="ttime != null">
+        #{ttime,jdbcType=DATE},
+      </if>
+      <if test="tgood != null">
+        #{tgood,jdbcType=INTEGER},
+      </if>
+      <if test="tuser != null">
+        #{tuser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.henu.pojo.Talk">
+    <!--@mbg.generated-->
+    update tb_talk
+    <set>
+      <if test="tcomm != null">
+        tcomm = #{tcomm,jdbcType=VARCHAR},
+      </if>
+      <if test="ttime != null">
+        ttime = #{ttime,jdbcType=DATE},
+      </if>
+      <if test="tgood != null">
+        tgood = #{tgood,jdbcType=INTEGER},
+      </if>
+      <if test="tuser != null">
+        tuser = #{tuser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where tid = #{tid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.henu.pojo.Talk">
+    <!--@mbg.generated-->
+    update tb_talk
+    set tcomm = #{tcomm,jdbcType=VARCHAR},
+      ttime = #{ttime,jdbcType=DATE},
+      tgood = #{tgood,jdbcType=INTEGER},
+      tuser = #{tuser,jdbcType=VARCHAR}
+    where tid = #{tid,jdbcType=INTEGER}
+  </update>
+</mapper>

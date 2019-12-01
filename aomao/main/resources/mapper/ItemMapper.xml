@@ -1,0 +1,121 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.henu.dao.ItemMapper">
+  <resultMap id="BaseResultMap" type="com.henu.pojo.Item">
+    <!--@mbg.generated-->
+    <id column="iid" jdbcType="VARCHAR" property="iid" />
+    <result column="inum" jdbcType="INTEGER" property="inum" />
+    <result column="iprice" jdbcType="DOUBLE" property="iprice" />
+    <result column="italk" jdbcType="INTEGER" property="italk" />
+    <result column="igood" jdbcType="INTEGER" property="igood" />
+    <result column="iorder" jdbcType="VARCHAR" property="iorder" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    iid, inum, iprice, italk, igood, iorder
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tb_item
+    where iid = #{iid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from tb_item
+    where iid = #{iid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.henu.pojo.Item">
+    <!--@mbg.generated-->
+    insert into tb_item (iid, inum, iprice, 
+      italk, igood, iorder
+      )
+    values (#{iid,jdbcType=VARCHAR}, #{inum,jdbcType=INTEGER}, #{iprice,jdbcType=DOUBLE}, 
+      #{italk,jdbcType=INTEGER}, #{igood,jdbcType=INTEGER}, #{iorder,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" parameterType="com.henu.pojo.Item">
+    <!--@mbg.generated-->
+    insert into tb_item
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="iid != null">
+        iid,
+      </if>
+      <if test="inum != null">
+        inum,
+      </if>
+      <if test="iprice != null">
+        iprice,
+      </if>
+      <if test="italk != null">
+        italk,
+      </if>
+      <if test="igood != null">
+        igood,
+      </if>
+      <if test="iorder != null">
+        iorder,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="iid != null">
+        #{iid,jdbcType=VARCHAR},
+      </if>
+      <if test="inum != null">
+        #{inum,jdbcType=INTEGER},
+      </if>
+      <if test="iprice != null">
+        #{iprice,jdbcType=DOUBLE},
+      </if>
+      <if test="italk != null">
+        #{italk,jdbcType=INTEGER},
+      </if>
+      <if test="igood != null">
+        #{igood,jdbcType=INTEGER},
+      </if>
+      <if test="iorder != null">
+        #{iorder,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.henu.pojo.Item">
+    <!--@mbg.generated-->
+    update tb_item
+    <set>
+      <if test="inum != null">
+        inum = #{inum,jdbcType=INTEGER},
+      </if>
+      <if test="iprice != null">
+        iprice = #{iprice,jdbcType=DOUBLE},
+      </if>
+      <if test="italk != null">
+        italk = #{italk,jdbcType=INTEGER},
+      </if>
+      <if test="igood != null">
+        igood = #{igood,jdbcType=INTEGER},
+      </if>
+      <if test="iorder != null">
+        iorder = #{iorder,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where iid = #{iid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.henu.pojo.Item">
+    <!--@mbg.generated-->
+    update tb_item
+    set inum = #{inum,jdbcType=INTEGER},
+      iprice = #{iprice,jdbcType=DOUBLE},
+      italk = #{italk,jdbcType=INTEGER},
+      igood = #{igood,jdbcType=INTEGER},
+      iorder = #{iorder,jdbcType=VARCHAR}
+    where iid = #{iid,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectAllItems" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from tb_item
+  </select>
+</mapper>

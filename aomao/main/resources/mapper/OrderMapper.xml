@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.henu.dao.OrderMapper">
+  <resultMap id="BaseResultMap" type="com.henu.pojo.Order">
+    <!--@mbg.generated-->
+    <id column="oid" jdbcType="VARCHAR" property="oid" />
+    <result column="oprice" jdbcType="DOUBLE" property="oprice" />
+    <result column="ostate" jdbcType="INTEGER" property="ostate" />
+    <result column="otime" jdbcType="DATE" property="otime" />
+    <result column="oaddr" jdbcType="INTEGER" property="oaddr" />
+    <result column="ouser" jdbcType="VARCHAR" property="ouser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    oid, oprice, ostate, otime, oaddr, ouser
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tb_order
+    where oid = #{oid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from tb_order
+    where oid = #{oid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.henu.pojo.Order">
+    <!--@mbg.generated-->
+    insert into tb_order (oid, oprice, ostate, 
+      otime, oaddr, ouser)
+    values (#{oid,jdbcType=VARCHAR}, #{oprice,jdbcType=DOUBLE}, #{ostate,jdbcType=INTEGER}, 
+      #{otime,jdbcType=DATE}, #{oaddr,jdbcType=INTEGER}, #{ouser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" parameterType="com.henu.pojo.Order">
+    <!--@mbg.generated-->
+    insert into tb_order
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="oid != null">
+        oid,
+      </if>
+      <if test="oprice != null">
+        oprice,
+      </if>
+      <if test="ostate != null">
+        ostate,
+      </if>
+      <if test="otime != null">
+        otime,
+      </if>
+      <if test="oaddr != null">
+        oaddr,
+      </if>
+      <if test="ouser != null">
+        ouser,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="oid != null">
+        #{oid,jdbcType=VARCHAR},
+      </if>
+      <if test="oprice != null">
+        #{oprice,jdbcType=DOUBLE},
+      </if>
+      <if test="ostate != null">
+        #{ostate,jdbcType=INTEGER},
+      </if>
+      <if test="otime != null">
+        #{otime,jdbcType=DATE},
+      </if>
+      <if test="oaddr != null">
+        #{oaddr,jdbcType=INTEGER},
+      </if>
+      <if test="ouser != null">
+        #{ouser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.henu.pojo.Order">
+    <!--@mbg.generated-->
+    update tb_order
+    <set>
+      <if test="oprice != null">
+        oprice = #{oprice,jdbcType=DOUBLE},
+      </if>
+      <if test="ostate != null">
+        ostate = #{ostate,jdbcType=INTEGER},
+      </if>
+      <if test="otime != null">
+        otime = #{otime,jdbcType=DATE},
+      </if>
+      <if test="oaddr != null">
+        oaddr = #{oaddr,jdbcType=INTEGER},
+      </if>
+      <if test="ouser != null">
+        ouser = #{ouser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where oid = #{oid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.henu.pojo.Order">
+    <!--@mbg.generated-->
+    update tb_order
+    set oprice = #{oprice,jdbcType=DOUBLE},
+      ostate = #{ostate,jdbcType=INTEGER},
+      otime = #{otime,jdbcType=DATE},
+      oaddr = #{oaddr,jdbcType=INTEGER},
+      ouser = #{ouser,jdbcType=VARCHAR}
+    where oid = #{oid,jdbcType=VARCHAR}
+  </update>
+
+  <select id="selectAllOrders" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from tb_order
+  </select>
+</mapper>

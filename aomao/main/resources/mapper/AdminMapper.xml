@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.henu.dao.AdminMapper">
+  <resultMap id="BaseResultMap" type="com.henu.pojo.Admin">
+    <!--@mbg.generated-->
+    <id column="admid" jdbcType="INTEGER" property="admid" />
+    <result column="admuser" jdbcType="VARCHAR" property="admuser" />
+    <result column="admpwd" jdbcType="VARCHAR" property="admpwd" />
+    <result column="admname" jdbcType="VARCHAR" property="admname" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    admid, admuser, admpwd, admname
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tb_admin
+    where admid = #{admid,jdbcType=INTEGER}
+  </select>
+
+
+  <!-- 自己写的 -->
+  <select id="selectAdminByAdmuser" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from tb_admin
+    where `admuser` = #{admuser,jdbcType=VARCHAR}
+  </select>
+
+<!--  模糊查询-->
+  <select id="searchAdmin" parameterType="java.lang.String" resultMap="BaseResultMap">
+  select * from tb_admin where admname like '%${_parameter}%'
+</select>
+
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from tb_admin
+    where admid = #{admid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="admid" keyProperty="admid" parameterType="com.henu.pojo.Admin" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tb_admin (admuser, admpwd, admname
+      )
+    values (#{admuser,jdbcType=VARCHAR}, #{admpwd,jdbcType=VARCHAR}, #{admname,jdbcType=VARCHAR}
+      )
+  </insert>
+  <insert id="insertSelective" keyColumn="admid" keyProperty="admid" parameterType="com.henu.pojo.Admin" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tb_admin
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="admuser != null">
+        admuser,
+      </if>
+      <if test="admpwd != null">
+        admpwd,
+      </if>
+      <if test="admname != null">
+        admname,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="admuser != null">
+        #{admuser,jdbcType=VARCHAR},
+      </if>
+      <if test="admpwd != null">
+        #{admpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="admname != null">
+        #{admname,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.henu.pojo.Admin">
+    <!--@mbg.generated-->
+    update tb_admin
+    <set>
+      <if test="admuser != null">
+        admuser = #{admuser,jdbcType=VARCHAR},
+      </if>
+      <if test="admpwd != null">
+        admpwd = #{admpwd,jdbcType=VARCHAR},
+      </if>
+      <if test="admname != null">
+        admname = #{admname,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where admid = #{admid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.henu.pojo.Admin">
+    <!--@mbg.generated-->
+    update tb_admin
+    set admuser = #{admuser,jdbcType=VARCHAR},
+      admpwd = #{admpwd,jdbcType=VARCHAR},
+      admname = #{admname,jdbcType=VARCHAR}
+    where admid = #{admid,jdbcType=INTEGER}
+  </update>
+
+
+  <update id="updateAdminByPrimaryKey" parameterType="com.henu.pojo.Admin">
+    <!--@mbg.generated-->
+    update tb_admin
+    set
+    admpwd = #{admpwd,jdbcType=VARCHAR},
+    admname = #{admname,jdbcType=VARCHAR}
+    where admuser = #{admuser,jdbcType=VARCHAR}
+  </update>
+
+
+</mapper>

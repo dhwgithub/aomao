@@ -1,0 +1,133 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.henu.dao.AddressMapper">
+  <resultMap id="BaseResultMap" type="com.henu.pojo.Address">
+    <!--@mbg.generated-->
+    <id column="addid" jdbcType="INTEGER" property="addid" />
+    <result column="address1" jdbcType="VARCHAR" property="address1" />
+    <result column="address2" jdbcType="VARCHAR" property="address2" />
+    <result column="addrtel" jdbcType="VARCHAR" property="addrtel" />
+    <result column="addrtel2" jdbcType="VARCHAR" property="addrtel2" />
+    <result column="addrget" jdbcType="VARCHAR" property="addrget" />
+    <result column="addrcard" jdbcType="VARCHAR" property="addrcard" />
+    <result column="addruser" jdbcType="VARCHAR" property="addruser" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    addid, address1, address2, addrtel, addrtel2, addrget, addrcard, addruser
+  </sql>
+  <select id="selectByPrimaryKey" parameterType="java.lang.Integer" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tb_address
+    where addid = #{addid,jdbcType=INTEGER}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.Integer">
+    <!--@mbg.generated-->
+    delete from tb_address
+    where addid = #{addid,jdbcType=INTEGER}
+  </delete>
+  <insert id="insert" keyColumn="addid" keyProperty="addid" parameterType="com.henu.pojo.Address" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tb_address (address1, address2, addrtel, 
+      addrtel2, addrget, addrcard, 
+      addruser)
+    values (#{address1,jdbcType=VARCHAR}, #{address2,jdbcType=VARCHAR}, #{addrtel,jdbcType=VARCHAR}, 
+      #{addrtel2,jdbcType=VARCHAR}, #{addrget,jdbcType=VARCHAR}, #{addrcard,jdbcType=VARCHAR}, 
+      #{addruser,jdbcType=VARCHAR})
+  </insert>
+  <insert id="insertSelective" keyColumn="addid" keyProperty="addid" parameterType="com.henu.pojo.Address" useGeneratedKeys="true">
+    <!--@mbg.generated-->
+    insert into tb_address
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="address1 != null">
+        address1,
+      </if>
+      <if test="address2 != null">
+        address2,
+      </if>
+      <if test="addrtel != null">
+        addrtel,
+      </if>
+      <if test="addrtel2 != null">
+        addrtel2,
+      </if>
+      <if test="addrget != null">
+        addrget,
+      </if>
+      <if test="addrcard != null">
+        addrcard,
+      </if>
+      <if test="addruser != null">
+        addruser,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="address1 != null">
+        #{address1,jdbcType=VARCHAR},
+      </if>
+      <if test="address2 != null">
+        #{address2,jdbcType=VARCHAR},
+      </if>
+      <if test="addrtel != null">
+        #{addrtel,jdbcType=VARCHAR},
+      </if>
+      <if test="addrtel2 != null">
+        #{addrtel2,jdbcType=VARCHAR},
+      </if>
+      <if test="addrget != null">
+        #{addrget,jdbcType=VARCHAR},
+      </if>
+      <if test="addrcard != null">
+        #{addrcard,jdbcType=VARCHAR},
+      </if>
+      <if test="addruser != null">
+        #{addruser,jdbcType=VARCHAR},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.henu.pojo.Address">
+    <!--@mbg.generated-->
+    update tb_address
+    <set>
+      <if test="address1 != null">
+        address1 = #{address1,jdbcType=VARCHAR},
+      </if>
+      <if test="address2 != null">
+        address2 = #{address2,jdbcType=VARCHAR},
+      </if>
+      <if test="addrtel != null">
+        addrtel = #{addrtel,jdbcType=VARCHAR},
+      </if>
+      <if test="addrtel2 != null">
+        addrtel2 = #{addrtel2,jdbcType=VARCHAR},
+      </if>
+      <if test="addrget != null">
+        addrget = #{addrget,jdbcType=VARCHAR},
+      </if>
+      <if test="addrcard != null">
+        addrcard = #{addrcard,jdbcType=VARCHAR},
+      </if>
+      <if test="addruser != null">
+        addruser = #{addruser,jdbcType=VARCHAR},
+      </if>
+    </set>
+    where addid = #{addid,jdbcType=INTEGER}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.henu.pojo.Address">
+    <!--@mbg.generated-->
+    update tb_address
+    set address1 = #{address1,jdbcType=VARCHAR},
+      address2 = #{address2,jdbcType=VARCHAR},
+      addrtel = #{addrtel,jdbcType=VARCHAR},
+      addrtel2 = #{addrtel2,jdbcType=VARCHAR},
+      addrget = #{addrget,jdbcType=VARCHAR},
+      addrcard = #{addrcard,jdbcType=VARCHAR},
+      addruser = #{addruser,jdbcType=VARCHAR}
+    where addid = #{addid,jdbcType=INTEGER}
+  </update>
+  <select id="selectAddressByAddruser" resultMap="BaseResultMap">
+    select * from tb_address where addruser = #{addruser,jdbcType=VARCHAR}
+  </select>
+</mapper>

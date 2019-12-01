@@ -1,0 +1,172 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.henu.dao.UserMapper">
+  <resultMap id="BaseResultMap" type="com.henu.pojo.User">
+    <!--@mbg.generated-->
+    <id column="uid" jdbcType="VARCHAR" property="uid" />
+    <result column="uname" jdbcType="VARCHAR" property="uname" />
+    <result column="upwd" jdbcType="VARCHAR" property="upwd" />
+    <result column="uemail" jdbcType="VARCHAR" property="uemail" />
+    <result column="utel" jdbcType="VARCHAR" property="utel" />
+    <result column="uimg" jdbcType="VARCHAR" property="uimg" />
+    <result column="ugender" jdbcType="VARCHAR" property="ugender" />
+    <result column="uscore" jdbcType="INTEGER" property="uscore" />
+    <result column="urank" jdbcType="INTEGER" property="urank" />
+    <result column="ustate" jdbcType="INTEGER" property="ustate" />
+  </resultMap>
+  <sql id="Base_Column_List">
+    <!--@mbg.generated-->
+    `uid`, uname, upwd, uemail, utel, uimg, ugender, uscore, urank, ustate
+  </sql>
+
+  <!-- 自己写的 -->
+  <select id="selectByEmail" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select
+    <include refid="Base_Column_List" />
+    from tb_user
+    where `uemail` = #{uemail,jdbcType=VARCHAR}
+  </select>
+
+
+
+  <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+    <!--@mbg.generated-->
+    select 
+    <include refid="Base_Column_List" />
+    from tb_user
+    where `uid` = #{uid,jdbcType=VARCHAR}
+  </select>
+  <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+    <!--@mbg.generated-->
+    delete from tb_user
+    where `uid` = #{uid,jdbcType=VARCHAR}
+  </delete>
+  <insert id="insert" parameterType="com.henu.pojo.User">
+    <!--@mbg.generated-->
+    insert into tb_user (`uid`, uname, upwd, 
+      uemail, utel, uimg, 
+      ugender, uscore, urank, 
+      ustate)
+    values (#{uid,jdbcType=VARCHAR}, #{uname,jdbcType=VARCHAR}, #{upwd,jdbcType=VARCHAR}, 
+      #{uemail,jdbcType=VARCHAR}, #{utel,jdbcType=VARCHAR}, #{uimg,jdbcType=VARCHAR}, 
+      #{ugender,jdbcType=VARCHAR}, #{uscore,jdbcType=INTEGER}, #{urank,jdbcType=INTEGER}, 
+      #{ustate,jdbcType=INTEGER})
+  </insert>
+  <insert id="insertSelective" parameterType="com.henu.pojo.User">
+    <!--@mbg.generated-->
+    insert into tb_user
+    <trim prefix="(" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        `uid`,
+      </if>
+      <if test="uname != null">
+        uname,
+      </if>
+      <if test="upwd != null">
+        upwd,
+      </if>
+      <if test="uemail != null">
+        uemail,
+      </if>
+      <if test="utel != null">
+        utel,
+      </if>
+      <if test="uimg != null">
+        uimg,
+      </if>
+      <if test="ugender != null">
+        ugender,
+      </if>
+      <if test="uscore != null">
+        uscore,
+      </if>
+      <if test="urank != null">
+        urank,
+      </if>
+      <if test="ustate != null">
+        ustate,
+      </if>
+    </trim>
+    <trim prefix="values (" suffix=")" suffixOverrides=",">
+      <if test="uid != null">
+        #{uid,jdbcType=VARCHAR},
+      </if>
+      <if test="uname != null">
+        #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="upwd != null">
+        #{upwd,jdbcType=VARCHAR},
+      </if>
+      <if test="uemail != null">
+        #{uemail,jdbcType=VARCHAR},
+      </if>
+      <if test="utel != null">
+        #{utel,jdbcType=VARCHAR},
+      </if>
+      <if test="uimg != null">
+        #{uimg,jdbcType=VARCHAR},
+      </if>
+      <if test="ugender != null">
+        #{ugender,jdbcType=VARCHAR},
+      </if>
+      <if test="uscore != null">
+        #{uscore,jdbcType=INTEGER},
+      </if>
+      <if test="urank != null">
+        #{urank,jdbcType=INTEGER},
+      </if>
+      <if test="ustate != null">
+        #{ustate,jdbcType=INTEGER},
+      </if>
+    </trim>
+  </insert>
+  <update id="updateByPrimaryKeySelective" parameterType="com.henu.pojo.User">
+    <!--@mbg.generated-->
+    update tb_user
+    <set>
+      <if test="uname != null">
+        uname = #{uname,jdbcType=VARCHAR},
+      </if>
+      <if test="upwd != null">
+        upwd = #{upwd,jdbcType=VARCHAR},
+      </if>
+      <if test="uemail != null">
+        uemail = #{uemail,jdbcType=VARCHAR},
+      </if>
+      <if test="utel != null">
+        utel = #{utel,jdbcType=VARCHAR},
+      </if>
+      <if test="uimg != null">
+        uimg = #{uimg,jdbcType=VARCHAR},
+      </if>
+      <if test="ugender != null">
+        ugender = #{ugender,jdbcType=VARCHAR},
+      </if>
+      <if test="uscore != null">
+        uscore = #{uscore,jdbcType=INTEGER},
+      </if>
+      <if test="urank != null">
+        urank = #{urank,jdbcType=INTEGER},
+      </if>
+      <if test="ustate != null">
+        ustate = #{ustate,jdbcType=INTEGER},
+      </if>
+    </set>
+    where `uid` = #{uid,jdbcType=VARCHAR}
+  </update>
+  <update id="updateByPrimaryKey" parameterType="com.henu.pojo.User">
+    <!--@mbg.generated-->
+    update tb_user
+    set uname = #{uname,jdbcType=VARCHAR},
+      upwd = #{upwd,jdbcType=VARCHAR},
+      uemail = #{uemail,jdbcType=VARCHAR},
+      utel = #{utel,jdbcType=VARCHAR},
+      uimg = #{uimg,jdbcType=VARCHAR},
+      ugender = #{ugender,jdbcType=VARCHAR},
+      uscore = #{uscore,jdbcType=INTEGER},
+      urank = #{urank,jdbcType=INTEGER},
+      ustate = #{ustate,jdbcType=INTEGER}
+    where `uid` = #{uid,jdbcType=VARCHAR}
+  </update>
+</mapper>
