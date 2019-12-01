@@ -1,0 +1,230 @@
+@charset "utf-8";
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+	color: #666;
+}
+/*禁止响应式布局
+.container {
+  width: 1280px !important;
+  max-width: none !important;
+}*/
+
+/*body {
+	/*渐变背景色*/
+	background-image: linear-gradient(120deg, #84fab	0 0%, #8fd3f4 100%);
+}*/
+
+/*导航栏css样式*/
+.navbar-default {
+	/*background-color: #31B0D5;*/
+}
+#face-img {
+  	width: 34px;
+  	height: 34px;
+  	display: flex;
+  	border-radius: 50%;
+  	align-items: center;
+  	justify-content: center;
+  	overflow: hidden;
+}
+.logo {
+	padding: 0;
+}
+#rlbtn {
+	margin-top: 45px;
+}
+#facebtn {
+	margin-top: 30px;
+}
+
+/*轮播栏样式*/
+#myCarousel {
+	/*margin: 51.4px 0 0 0;*/
+}
+.carousel-inner img {
+	margin: 0 auto;
+}
+
+/*筛选栏样式*/
+#filterDiv {
+	/*margin: 51.4px 0 0 0;*/
+	padding: 30px 0;
+	background-color: #eee;
+}
+#filterDiv table {
+	margin: auto;
+	width: 60%;
+	color: #000000;
+	/*text-align: center;*/
+	/*overflow: hidden;*/
+}
+
+/*礼物栏css样式*/
+#gift {
+	padding: 40px 0;
+	background-color: #eee;
+	/*text-align: center;*/
+}
+#gift p {
+	/*文字显示超过三行,多余用...代替*/
+	overflow: hidden;  
+    text-overflow: ellipsis;  
+    display: -webkit-box;  
+    -webkit-line-clamp: 1;  
+    -webkit-box-orient: vertical;
+}
+/*#gift h4 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}*/
+
+
+/*页脚栏css样式*/
+#footer {
+	background-color: #484442;
+	border-top: 1px solid #ccc;
+	padding: 20px;
+	text-align: center;
+	color: #c3c3c3;
+	font-size: 16px;
+}
+
+#footer .container a {
+	display: inline-block;
+    font-size: 13px;
+    transition-property: color;
+    transition-duration: .3s;
+	color: #c3c3c3;
+}
+#footer .container a,a:active, a:focus, a:hover {
+    text-decoration: none;
+    outline: none;
+}
+/*点赞css样式*/
+.like{
+	width: 80px;
+	font-size:20px;
+	color:#ccc;
+	cursor:pointer;
+}
+.cs{
+	color:#f00;
+}
+
+/*回到顶部,回到底部css样式*/
+#scroll {
+	position:fixed;
+	top: 70%;
+	right: 0%;
+}
+.scrollItem {
+	width:50px;
+	height:50px;
+	border-radius: 10px;
+	background-color: #CCCCCC;
+	text-align: center;
+	padding-top: 4px;
+	cursor: pointer;
+}
+.scrollItem:hover {
+	background-color: #8C8C8C;
+}
+#toBottom {
+	margin-top: 20px;
+}
+#scroll .scrollItem img {
+	width: 40px;
+	height: 40px;
+}
+
+
+/*创意工坊侧边导航栏css样式*/
+
+
+/*礼物详情的css样式*/
+.thumbnail{
+	padding: 0;
+	border-radius: 0;
+}
+.giftName{
+	font-size: 24px;
+	color: #333;margin-top: 26px;
+	text-align: center;
+}
+.giftDescribe{
+	font-size: 16px;
+	color: #9f9f9f;
+	margin-top: 20px;
+	margin-bottom: 20px;
+	text-align: center;
+}
+.giftSelect{
+	font-size: 20px;
+	margin-bottom: 30px;
+	text-align: center;
+}
+#source{
+	text-align: center;
+}
+.youlike{
+	text-align: center;
+	font-size: 30px;
+	color:red;
+    text-shadow:  
+    0px 1px 0px #c0c0c0,  
+    0px 2px 0px #b0b0b0,  
+    0px 3px 0px #a0a0a0,  
+    0px 4px 0px #909090,  
+    0px 5px 10px rgba(0, 0, 0, .9); 
+}
+#buy{
+	display:block;
+	margin: 20px auto;
+}
+#divlike{
+	font-size: 25px;
+	margin: 40px auto;
+	width: 100px;
+	text-align: center;
+	border-radius: 4px;
+}
+
+/*菜单栏css样式*/
+#adminMenu {
+	border: 1px solid gray;
+	width: 10%;
+	height: 600px;
+	float: left;
+}
+
+
+
+
+/*添加礼物的样式*/
+/*左边大图*/
+
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width: 768px) {
+	#gift h4 {
+		font-size: 16px;
+		/*文字显示超过一行,多余用...代替*/
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width: 992px) {
+	#gift h4 {
+		font-size: 18px;
+	}
+}
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px) {
+	#gift h4 {
+		font-size: 20px;
+	}
+}

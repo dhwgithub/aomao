@@ -1,0 +1,70 @@
+/*导航栏css样式*/
+#top {
+	width: 100%;
+	background-color: #a2e1d4;
+	position: fixed;
+	top: 0;
+}
+#face-img {
+  	width: 40px;
+  	height: 40px;
+  	display: flex;
+  	border-radius: 50%;
+  	align-items: center;
+  	justify-content: center;
+  	overflow: hidden;
+  	margin-top: 13px;
+}
+#logo {
+	padding: 0;
+}
+#returnBtn {
+	margin-top: 1.2%;
+}
+
+/*侧边导航栏css样式*/
+#adminMenu {
+	position: fixed;
+	top: 69.2px;
+	bottom: 0;
+	width: 15%;
+	padding: 20px 15px;
+	background-color: #32323d;
+}
+#adminMenu .adminMenu_span {
+	color: #4fc04d;
+}
+#adminMenu li {
+	padding: 8px;
+}
+
+/*右边内容css样式*/
+#adminIframe {
+	float: right;
+	width: 83%;
+	margin-top: 100px; 
+	height: 600px;
+}
+
+
+/*页脚栏css样式*/
+#footer {
+	background-color: #484442;
+	/*border-top: 1px solid #ccc;*/
+	padding: 20px;
+	text-align: center;
+	color: #c3c3c3;
+	font-size: 16px;
+}
+
+#footer .container a {
+	display: inline-block;
+    font-size: 13px;
+    transition-property: color;
+    transition-duration: .3s;
+	color: #c3c3c3;
+}
+#footer .container a,a:active, a:focus, a:hover {
+    text-decoration: none;
+    outline: none;
+}
