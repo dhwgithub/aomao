@@ -1,0 +1,136 @@
+@charset "utf-8";
+body {
+	font-family: "Helvetica Neue", Helvetica, Arial, "Microsoft Yahei UI", "Microsoft YaHei", SimHei, "\5B8B\4F53", simsun, sans-serif;
+	color: #666;
+}
+/*禁止响应式布局
+.container {
+  width: 1280px !important;
+  max-width: none !important;
+}*/
+
+/*body {
+	/*渐变背景色*/
+	background-image: linear-gradient(120deg, #84fab0 0%, #8fd3f4 100%);
+}*/
+
+/*导航栏css样式*/
+.navbar-default {
+	/*background-color: #31B0D5;*/
+}
+
+/*轮播栏样式*/
+#myCarousel {
+	margin: 51.4px 0 0 0;
+}
+.carousel-inner img {
+	margin: 0 auto;
+}
+
+/*筛选栏样式*/
+#filterDiv {
+	margin: 51.4px 0 0 0;
+	padding: 30px 0;
+	background-color: #eee;
+}
+#filterDiv table {
+	margin: auto;
+	width: 60%;
+	color: #000000;
+	/*text-align: center;*/
+	/*overflow: hidden;*/
+}
+
+/*礼物栏css样式*/
+#gift {
+	padding: 40px 0;
+	background-color: #eee;
+	/*text-align: center;*/
+}
+#gift p {
+	/*文字显示超过三行,多余用...代替*/
+	overflow: hidden;  
+    text-overflow: ellipsis;  
+    display: -webkit-box;  
+    -webkit-line-clamp: 3;  
+    -webkit-box-orient: vertical;
+}
+/*#gift h4 {
+	overflow: hidden;
+	white-space: nowrap;
+	text-overflow: ellipsis;
+}*/
+
+
+/*页脚栏css样式*/
+#footer {
+	background-color: #eee;
+	border-top: 1px solid #ccc;
+	padding: 20px;
+	text-align: center;
+	color: #000;
+}
+
+/*点赞css样式*/
+.like{
+	width: 80px;
+	font-size:20px;
+	color:#ccc;
+	cursor:pointer;
+}
+.cs{
+	color:#f00;
+}
+
+/*回到顶部,回到底部css样式*/
+#scroll {
+	position:fixed;
+	top: 70%;
+	right: 0%;
+}
+.scrollItem {
+	width:50px;
+	height:50px;
+	border-radius: 10px;
+	background-color: #CCCCCC;
+	text-align: center;
+	padding-top: 4px;
+	cursor: pointer;
+}
+.scrollItem:hover {
+	background-color: #8C8C8C;
+}
+#toBottom {
+	margin-top: 20px;
+}
+#scroll .scrollItem img {
+	width: 40px;
+	height: 40px;
+}
+
+
+
+/* 小屏幕（平板，大于等于768px） */
+@media (min-width: 768px) {
+	#gift h4 {
+		font-size: 16px;
+		/*文字显示超过一行,多余用...代替*/
+		overflow: hidden;
+		white-space: nowrap;
+		text-overflow: ellipsis;
+	}
+}
+
+/* 中等屏幕（桌面显示器，大于等于992px） */
+@media (min-width: 992px) {
+	#gift h4 {
+		font-size: 18px;
+	}
+}
+
+/* 大屏幕（大桌面显示器，大于等于1200px） */
+@media (min-width: 1200px) {
+	#gift h4 {
+		font-size: 20px;
+	}
+}

@@ -1,0 +1,431 @@
+<!DOCTYPE html>
+<html lang="zh-cn">
+<html>
+	<head>
+		<meta charset="utf-8" />
+		<!--在移动设备端访问的时候，不会进行缩放，以100%的比例显示在移动设备中
+		<meta name="viewport" content="width=device-width, initial-scale=1.0”>-->
+		<meta name="viewport" content="width=device-width, initial-scale=1,maximum-scale=1, user-scalable=no">
+		<title>礼应如此</title>
+		<link rel="stylesheet" href="css/bootstrap.min.css"/>
+		<link rel="stylesheet" href="css/style.css">
+	</head>
+	<body>
+		<!--最上面Logo-->
+		<nav class="nav navbar-default">
+			<div class="container" style="height: 100px;">
+				<!--网站logo-->
+					<a href="index.html" class="navbar-brand logo"><img src="img/Logo.png" alt="礼应如此"></a>
+					<button class="navbar-btn btn btn-primary navbar-right" data-toggle="modal" data-target="#myModalLogOn">登陆/注册</button>	
+			</div>
+		</nav>
+		<!--导航栏-->
+		<nav class="navbar navbar-default navbar-fixed-top">
+			<div class="container">
+				<div class="navbar-header">
+					<!--网站logo-->
+					<a href="index.html" class="navbar-brand logo"><img src="img/Logo.png" alt="礼应如此"></a>
+					<!--移动设备上展开导航元素按钮-->
+					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#navbar-collapse">
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+				</div>
+				<div class="collapse navbar-collapse" id="navbar-collapse">
+					<ul class="nav navbar-nav">
+						<!--首页-->
+						<li class="active"><a href="#"><span class="glyphicon glyphicon-home"></span> 首页</a></li>
+						<!--赠送对象下拉菜单-->
+						<li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">赠送对象<span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">男朋友</a></li>
+				            <!--<li role="separator" class="divider"></li>-->
+				            <li><a href="#">女朋友</a></li>
+				            <li><a href="#">男性朋友</a></li>
+				            <li><a href="#">女性朋友</a></li>
+				            <li><a href="#">男性长辈</a></li>
+				            <li><a href="#">女性长辈</a></li>
+				          </ul>
+				       </li>
+				       <!--赠送场合下拉菜单-->
+						<li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">赠送场合<span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">生日</a></li>
+				            <li><a href="#">表白</a></li>
+				            <li><a href="#">约会</a></li>
+				            <li><a href="#">订婚</a></li>
+				            <li><a href="#">久别重逢</a></li>
+				            <li><a href="#">结婚纪念</a></li>
+				          </ul>
+				       </li>
+				       <!--赠送节日下拉菜单-->
+						<li class="dropdown">
+				          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">赠送节日<span class="caret"></span></a>
+				          <ul class="dropdown-menu">
+				            <li><a href="#">春节</a></li>
+				            <li><a href="#">元宵节</a></li>
+				            <li><a href="#">端午节</a></li>
+				            <li><a href="#">中秋节</a></li>
+				            <li><a href="#">国庆节</a></li>
+				            <li><a href="#">圣诞节</a></li>
+				          </ul>
+				       </li>
+				       <!--创意工坊-->
+				       <li><a href="#"><span class="glyphicon glyphicon-pencil"></span> 创意工坊</a></li>
+					</ul>
+					<!--导航搜索框-->
+				    <form class="navbar-form navbar-left" role="search">
+					  <div class="form-group">
+					  	<div class="input-group">
+						    <input type="text" class="form-control" placeholder="搜索礼物关键字">
+						  	<span class="input-group-btn">
+						  		<button type="submit" class="btn btn-primary">搜索</button>
+						  	</span>
+					  	</div>
+					  </div>
+					</form>
+					
+					<button class="navbar-btn btn btn-primary navbar-right" data-toggle="modal" data-target="#myModalLogOn">登陆/注册</button>					
+				</div>
+			</div>
+		</nav>
+		
+		
+		<!-- 登录窗口 -->
+	    <div id="myModalLogOn" class="modal fade">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-body">
+	                    <button class="close" data-dismiss="modal">
+	                        <span>&times;</span>
+	                    </button>
+	                </div>
+	                <div class="modal-title">
+	                    <h1 class="text-center">登录</h1>
+	                </div>
+	                <div class="modal-body">
+	                	<!--登录表单-->
+	                    <form class="form-group" action="" method="post">
+	                            <div class="form-group">
+	                                <label for="">用户名</label>
+	                                <input class="form-control" type="text" placeholder="">
+	                            </div>
+	                            <div class="form-group">
+	                                <label for="">密码</label>
+	                                <input class="form-control" type="password" placeholder="">
+	                            </div>
+	                            <div class="text-right">
+	                                <button class="btn btn-primary" type="submit">登录</button>
+	                                <button class="btn btn-danger" data-dismiss="modal">取消</button>
+	                            </div>
+	                            <a href="" data-toggle="modal" data-dismiss="modal" data-target="#myModalRegister">还没有账号？点我注册</a>
+	                    </form>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+		
+		<!-- 注册窗口 -->
+	    <div id="myModalRegister" class="modal fade" tabindex="-1">
+	        <div class="modal-dialog">
+	            <div class="modal-content">
+	                <div class="modal-body">
+	                    <button class="close" data-dismiss="modal">
+	                        <span>&times;</span>
+	                    </button>
+	                </div>
+	                <div class="modal-title">
+	                    <h1 class="text-center">注册</h1>
+	                </div>
+	                <div class="modal-body">
+	                	<!--注册表单-->
+	                    <form class="form-group" action="" method="post">
+	                            <div class="form-group">
+	                                <label for="">用户名</label>
+	                                <input class="form-control" type="text" placeholder="6-15位字母或数字">
+	                            </div>
+	                            <div class="form-group">
+	                                <label for="">密码</label>
+	                                <input class="form-control" type="password" placeholder="至少6位字母或数字">
+	                            </div>
+	                            <div class="form-group">
+	                                <label for="">再次输入密码</label>
+	                                <input class="form-control" type="password" placeholder="至少6位字母或数字">
+	                            </div>
+	                            <div class="form-group">
+	                                <label for="">邮箱</label>
+	                                <input class="form-control" type="email" placeholder="例如:123@123.com">
+	                            </div>
+	                            <div class="text-right">
+	                                <button class="btn btn-primary" type="submit">提交</button>
+	                                <button class="btn btn-danger" data-dismiss="modal">取消</button>
+	                            </div>
+	                            <a href="" data-toggle="modal" data-dismiss="modal" data-target="#myModalLogOn">已有账号？点我登录</a>
+	                    </form>
+	                </div>
+	            </div>
+	        </div>
+	    </div>
+		
+		
+		<!--轮播拦-->
+		<div id="myCarousel" class="carousel slide">
+			<!-- 轮播（Carousel）指标 -->
+			<ol class="carousel-indicators">
+				<li data-target="#myCarousel" data-slide-to="0" class="active"></li>
+				<li data-target="#myCarousel" data-slide-to="1"></li>
+				<li data-target="#myCarousel" data-slide-to="2"></li>
+			</ol>
+			<!-- 轮播（Carousel）项目 -->
+			<div class="carousel-inner">
+				<div class="item active" style="">
+					<img src="img/show1.jpg" alt="第一张">
+				</div>
+				<div class="item" style="">
+					<img src="img/show2.jpg" alt="第二张">
+				</div>
+				<div class="item" style="">
+					<img src="img/show3.jpg" alt="第三张">
+				</div>
+			<!--<div style="background:#eee;">
+					<img src="img/slide.png" alt="第三张">
+				</div> -->
+			</div>
+			<!-- 轮播（Carousel）导航 -->
+			<a href="#myCarousel" data-slide="prev" class="carousel-control left">
+				<span class="glyphicon glyphicon-chevron-left"></span>
+			</a>
+			<a href="#myCarousel" data-slide="next" class="carousel-control right">
+				<span class="glyphicon glyphicon-chevron-right"></span>
+			</a>
+		</div>
+		
+		
+		<!--礼物栏-->
+		<div id="gift">
+			<div class="container">
+				<div class="row">
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片1.jpg" alt="">
+							<div class="caption">
+								<h4>男士真人软陶公仔定制</h4>
+								<p class="hidden-xs">提供真人照片，专业的软陶手工艺人就可以为您全手工定做真人陶土公仔，高相似度，卡通Q版，神韵十足，可永久珍藏，打造专属礼物。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片2.jpg" alt="">
+							<div class="caption">
+								<h4>创意偷钱猫储钱罐</h4>
+								<p class="hidden-xs">把硬币放在顶部的按钮处，并按下按钮，猫咪就会喵的一声从箱子里探出头，把钱偷走哦。还有皮卡丘、小熊猫、哆啦A梦、小黄人、熊本熊、大白等卡通人物可以选择哦。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片3.jpg" alt="">
+							<div class="caption">
+								<h4>吃鸡游戏同款三级盔</h4>
+								<p class="hidden-xs">非常有质感的一款绝地求生周边头盔，EVA+ABS材质，头戴轻便，不压头，不易碎，非常适合COSPLAY戴着吃鸡。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片4.jpg" alt="">
+							<div class="caption">
+								<h4>1314一生一世情侣杯</h4>
+								<p class="hidden-xs">1314谐音“一生一世”，寓意着一辈子，这款精致简约的保温杯，专为情侣设计，很适合送给最爱的TA，象征着交付彼此的一辈子。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片1.jpg" alt="">
+							<div class="caption">
+								<h4>男士真人软陶公仔定制</h4>
+								<p class="hidden-xs">提供真人照片，专业的软陶手工艺人就可以为您全手工定做真人陶土公仔，高相似度，卡通Q版，神韵十足，可永久珍藏，打造专属礼物。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片2.jpg" alt="">
+							<div class="caption">
+								<h4>创意偷钱猫储钱罐</h4>
+								<p class="hidden-xs">把硬币放在顶部的按钮处，并按下按钮，猫咪就会喵的一声从箱子里探出头，把钱偷走哦。还有皮卡丘、小熊猫、哆啦A梦、小黄人、熊本熊、大白等卡通人物可以选择哦。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片3.jpg" alt="">
+							<div class="caption">
+								<h4>吃鸡游戏同款三级盔</h4>
+								<p class="hidden-xs">非常有质感的一款绝地求生周边头盔，EVA+ABS材质，头戴轻便，不压头，不易碎，非常适合COSPLAY戴着吃鸡。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片4.jpg" alt="">
+							<div class="caption">
+								<h4>1314一生一世情侣杯</h4>
+								<p class="hidden-xs">1314谐音“一生一世”，寓意着一辈子，这款精致简约的保温杯，专为情侣设计，很适合送给最爱的TA，象征着交付彼此的一辈子。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片1.jpg" alt="">
+							<div class="caption">
+								<h4>男士真人软陶公仔定制</h4>
+								<p class="hidden-xs">提供真人照片，专业的软陶手工艺人就可以为您全手工定做真人陶土公仔，高相似度，卡通Q版，神韵十足，可永久珍藏，打造专属礼物。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片2.jpg" alt="">
+							<div class="caption">
+								<h4>创意偷钱猫储钱罐</h4>
+								<p class="hidden-xs">把硬币放在顶部的按钮处，并按下按钮，猫咪就会喵的一声从箱子里探出头，把钱偷走哦。还有皮卡丘、小熊猫、哆啦A梦、小黄人、熊本熊、大白等卡通人物可以选择哦。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片3.jpg" alt="">
+							<div class="caption">
+								<h4>吃鸡游戏同款三级盔</h4>
+								<p class="hidden-xs">非常有质感的一款绝地求生周边头盔，EVA+ABS材质，头戴轻便，不压头，不易碎，非常适合COSPLAY戴着吃鸡。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片4.jpg" alt="">
+							<div class="caption">
+								<h4>1314一生一世情侣杯</h4>
+								<p class="hidden-xs">1314谐音“一生一世”，寓意着一辈子，这款精致简约的保温杯，专为情侣设计，很适合送给最爱的TA，象征着交付彼此的一辈子。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片1.jpg" alt="">
+							<div class="caption">
+								<h4>男士真人软陶公仔定制</h4>
+								<p class="hidden-xs">提供真人照片，专业的软陶手工艺人就可以为您全手工定做真人陶土公仔，高相似度，卡通Q版，神韵十足，可永久珍藏，打造专属礼物。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片2.jpg" alt="">
+							<div class="caption">
+								<h4>创意偷钱猫储钱罐</h4>
+								<p class="hidden-xs">把硬币放在顶部的按钮处，并按下按钮，猫咪就会喵的一声从箱子里探出头，把钱偷走哦。还有皮卡丘、小熊猫、哆啦A梦、小黄人、熊本熊、大白等卡通人物可以选择哦。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片3.jpg" alt="">
+							<div class="caption">
+								<h4>吃鸡游戏同款三级盔</h4>
+								<p class="hidden-xs">非常有质感的一款绝地求生周边头盔，EVA+ABS材质，头戴轻便，不压头，不易碎，非常适合COSPLAY戴着吃鸡。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-3 col-md-4 col-sm-4 col-xs-6">
+						<div class="thumbnail">
+							<img src="img/礼物图片4.jpg" alt="">
+							<div class="caption">
+								<h4>1314一生一世情侣杯</h4>
+								<p class="hidden-xs">1314谐音“一生一世”，寓意着一辈子，这款精致简约的保温杯，专为情侣设计，很适合送给最爱的TA，象征着交付彼此的一辈子。</p>
+								<p class="like">&#10084;<span>6</span></p>
+							</div>
+						</div>
+					</div>
+				</div>
+				<a class="btn btn-default btn-lg btn-block" href="#">加载更多礼物</a>
+			</div>
+		</div>
+		
+		
+		<!--回到顶部，回到底部-->
+		<div id="scroll">
+		    <div id="toTop" class="scrollItem">
+		    	<img src="img/至顶部.png"/>
+		    </div>
+		    <div id="toBottom" class="scrollItem">
+		    	<img src="img/至底部.png"/>
+		    </div>
+		</div> 
+		
+		
+		<!--页脚栏-->
+		<footer id="footer">
+			<div class="container">
+				<p>首页 | 合作事宜 | 关于我们</p>
+				<p>豫ICP 备12345678. © 2018-2020 河南大学软件工程重修无限公司. Powered by Bootstrap.</p>
+			</div>
+		</footer>
+		
+	<script src="js/jquery.min.js"></script>
+	<script src="js/bootstrap.min.js"></script>
+	<script type="text/javascript">
+		//下拉菜单,鼠标滑过展开
+		$(function () {
+		    $(".dropdown").mouseover(function () {
+		        $(this).addClass("open");
+		    });
+		    $(".dropdown").mouseleave(function(){
+		        $(this).removeClass("open");
+		    })
+		})
+		
+		//点赞效果
+        $(function () {
+            $(".like").click(function () {
+                $(this).toggleClass('cs');
+            })
+        })
+        
+        //回到顶部，回到底部
+        $( function () {
+            var speed = 1000;//自定义滚动速度
+            //回到顶部
+            $( "#toTop").click( function () {
+                $( "html,body").stop().animate({ "scrollTop" : 0 }, speed);
+                });
+            //回到底部
+            var windowHeight = parseInt($("body").css("height" ));//整个页面的高度
+            $( "#toBottom").click(function () {
+                $( "html,body").animate({ "scrollTop" : windowHeight }, speed);
+            });
+        });
+	</script>
+	</body>
+</html>
